@@ -26,14 +26,13 @@ h3 {
   font-size: 1.5rem;
 }
 
-.container-fluid {
-  padding: 3% 15%;
-}
-
 /* Title Section */
 
 #title {
   background-color: #ff4c68;
+}
+.container-fluid {
+  padding: 3% 15% 5%;
 }
 
 /* Navigation Bar */
@@ -60,13 +59,28 @@ h3 {
 
 /* Title Image */
 .title-image {
-  width: 60%;
+  width: 20%;
   transform: rotateZ(25deg);
+  position: absolute;
 }
 
+@media (max-width: 1024px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    width: 40%;
+    transform: rotateZ(0);
+    position: static;
+  }
+}
 /* Features Section */
 #features {
   padding: 15% 7%;
+  position: relative;
+  z-index: 1;
+  background-color: white;
 }
 
 .features-icon {
@@ -76,7 +90,11 @@ h3 {
 .features-icon:hover {
   color: #ff4c68;
 }
-
+.features-h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
 .features-p {
   color: #8f8f8f;
   padding: 0 18%;
@@ -119,4 +137,31 @@ h3 {
 }
 .pricing-column {
   padding: 3% 2%;
+}
+
+/* CTA Section  */
+#cta {
+  padding: 7% 1%;
+  text-align: center;
+  color: #fff;
+  background-color: #ff4c68;
+}
+.cta-h2 {
+  padding: 0% 15%;
+}
+.cta-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Footer Section  */
+#footer {
+  padding: 7% 15%;
+  text-align: center;
+  background-color: #fff;
+  color: #8f8f8f;
+}
+
+.footer-icon {
+  font-size: 24px;
+  margin: 1rem 1.5rem 1rem 0rem;
 }
