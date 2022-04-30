@@ -9,7 +9,11 @@ app.use(express.static('public'));
 app.get("/", function (req, res) {
     //res.send("Hello");
     res.sendFile(__dirname+"/signup.html")
-})
+});
+
+app.post('failure', function(req, res) {
+    res.redirect('/');
+});
 
 app.post("/", function(req, res){
     var firstName = req.body.firstName;
@@ -78,10 +82,10 @@ app.post("/", function(req, res){
     
 
 
-})
+});
 app.listen(3000, function (params) {
     console.log("server running at port 3000");
-})
+});
 
 
 // API KEY
