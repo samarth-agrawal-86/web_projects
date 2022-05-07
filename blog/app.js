@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const lodash = require("lodash");
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -28,6 +29,18 @@ app.get('/contact', function (req, res) {
 });
 app.get('/compose', function (req, res) {
     res.render('compose');
+});
+
+app.get('/posts/:postId', function (req, res) {
+    const requestedTitle = lodash.lowerCase(req.params.postId);
+    posts.forEach(post => {
+        const storedTitle = lodash.lowerCase(post.postTitle) ;
+        if (storedTitle===requestedTitle) {
+            console.log('Requested: ', requestedTitle, 'Stored: ', storedTitle);
+            // console.log('Match Found');
+            res.render('post', {postTitle:post.postTitle, postContent:post.postBody});
+        }
+    });
 });
 
 app.post('/compose', function (req, res) {
