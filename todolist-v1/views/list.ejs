@@ -1,16 +1,25 @@
 <%- include('header'); -%>
 <body>
   <div class="box" id="heading">
-    <h1><%= page %> List</h1>
+    <h1><%= page %></h1>
   </div>
 
   <div class="box">
-    <% for (var i = 0; i < listItems.length; i++) {const item=listItems[i]; %>
-    <div class="item">
-      <input type="checkbox" name="" id="" />
-      <p><%=item%></p>
-    </div>
-    <% } %>
+    <% listItems.forEach(item => { %>
+    <form action="/delete" method="post">
+      <div class="item">
+        <input
+          onchange="this.form.submit()"
+          type="checkbox"
+          name="checkbox"
+          value="<%= item._id %>"
+          id=""
+        />
+        <p><%= item.name %></p>
+      </div>
+      <input type="hidden" name="listName" value="<%= page %>" />
+    </form>
+    <% }) %>
 
     <form class="item" action="/" method="post">
       <input

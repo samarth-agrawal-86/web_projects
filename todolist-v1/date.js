@@ -1,6 +1,11 @@
 module.exports.getDateDay = getDateDay;
 
 function getDateDay(params) {
+    // const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    // var dt = new Date();
+    // var d = dt.getDay();
+    // var dayName = weekday[d];
+    // res.render('list', {day:dayName, listItems:personalItems});
     let options = {
         weekday: "long",
         day: 'numeric',
