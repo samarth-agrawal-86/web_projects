@@ -14,7 +14,9 @@ var pages = ['work', 'personal'];
 var personalItems = ["Buy Food", "Cook Food", "Eat Food"];
 var workItems = [];
 
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+//mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect("mongodb+srv://admin-samarth:Pass1234@cluster0.jt9ls.mongodb.net/todolistDB");
+
 const itemSchema = new mongoose.Schema({
     name: String,
 });
@@ -148,6 +150,6 @@ app.post('/delete', function (req, res) {
     
 })
 
-app.listen('3000', function (req, res) {
+app.listen(process.env.PORT||3000, function (req, res) {
     console.log('Server running at port 3000');
 });
