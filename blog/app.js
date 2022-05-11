@@ -15,10 +15,25 @@ const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui 
 const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
-var posts = [];
+mongoose.connect("mongodb+srv://admin-samarth:Pass1234@cluster0.jt9ls.mongodb.net/blogDB");
+
+const postSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+});
+
+const Post = new mongoose.model('Post', postSchema);
+
 
 app.get('/', function (req, res) {
-    res.render('home', {startingContent:homeStartingContent, posts:posts });
+    Post.find({},function (err, docs) {
+        if (err) {
+            console.log(err);
+        } else {
+            // console.log(docs);
+            res.render('home', {startingContent:homeStartingContent, posts:docs });
+        }
+    })
 });
 
 app.get('/about', function (req, res) {
@@ -33,28 +48,37 @@ app.get('/compose', function (req, res) {
 });
 
 app.get('/posts/:postId', function (req, res) {
-    const requestedTitle = lodash.lowerCase(req.params.postId);
-    posts.forEach(post => {
-        const storedTitle = lodash.lowerCase(post.postTitle) ;
-        if (storedTitle===requestedTitle) {
-            console.log('Requested: ', requestedTitle, 'Stored: ', storedTitle);
-            // console.log('Match Found');
-            res.render('post', {postTitle:post.postTitle, postContent:post.postBody});
+    const requestedPostId = req.params.postId;
+    Post.findById(requestedPostId, function (err, doc) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (doc==null || doc=="") {
+                console.log("Requested title: ", requestedPostId);
+                console.log("Doc doesn't exist: ", doc);
+            } else {
+                console.log("Requested title: ", requestedPostId);
+                console.log(doc);
+                res.render('post', {postTitle:doc.title, postContent:doc.content});
+            }
+        }
+    })
+    
+});
+
+app.post('/compose', function (req, res) {
+    const newPost = Post({
+        title: req.body.postTitle,
+        content: req.body.postBody,
+    });
+    newPost.save(function (err) {
+        if (!err) {
+            res.redirect('/');
         }
     });
 });
 
-app.post('/compose', function (req, res) {
-    const postData = {
-        postTitle: req.body.postTitle,
-        postBody: req.body.postBody
-    };
-    posts.push(postData);
-    res.redirect('/');
-
-});
-
-app.listen('3000', function (req, res) {
+app.listen(process.env.PORT||3000, function (req, res) {
     console.log('Server started at port 3000');
     
 });
