@@ -10,8 +10,8 @@ app.use(express.static(__dirname+'/public'));
 
 app.set('view engine', 'ejs');
 
-//mongoose.connect("mongodb://localhost:27017/todolistDB");
-mongoose.connect("mongodb+srv://admin-samarth:Pass1234@cluster0.jt9ls.mongodb.net/todolistDB");
+//mongoose.connect(process.env.MONGOOSE_LOCAL_DB);
+mongoose.connect(process.env.MONGOOSE_ATLAS_DB);
 
 const itemSchema = new mongoose.Schema({
     name: String,

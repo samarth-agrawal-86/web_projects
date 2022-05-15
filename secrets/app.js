@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/secretsDB");
-//mongoose.connect("mongodb+srv://admin-samarth:Pass1234@cluster0.jt9ls.mongodb.net/todolistDB");
+mongoose.connect(process.env.MONGOOSE_LOCAL_DB);
+//mongoose.connect(process.env.MONGOOSE_ATLAS_DB);
 
 const userSchema = new mongoose.Schema({
     email: String,
