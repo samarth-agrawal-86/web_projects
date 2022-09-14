@@ -1,0 +1,147 @@
+<div class="container mt-2">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <% for( let ix=0; ix < searchedProperty.images.length; ix++ ) { %>
+                <% if (ix==0) { %>
+                    <div class="carousel-item active">
+                        <img src=<%=searchedProperty.images[ix] %> height="400" class="d-block w-100" alt="..." />
+                    </div>
+                    <% } else { %>
+                        <div class="carousel-item ">
+                            <img src=<%=searchedProperty.images[ix] %> height="400" class="d-block w-100" alt="..."
+                            />
+                        </div>
+                        <% } %>
+                            <% } %>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="mt-4">
+        <h1 class="text-center">
+            <%= searchedProperty.name %>
+        </h1>
+        <p class="text-center">
+            <%= searchedProperty.desc %>
+        </p>
+    </div>
+
+    <h3 class="text-center">Fill out an application</h3>
+
+
+    <% if (submitted) { %>
+        <div class="alert alert-success">
+            <strong class="text-center">Application successfully submitted. We will be in touch shortly</strong>
+        </div>
+        <% } %>
+            <div class="bg-light p-3">
+                <form action="#" method="post">
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Name</label>
+                        <input type="text" class="form-control" name="name" id="" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Date of Birth</label>
+                        <input type="text" class="form-control" name="dob" id="" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">SSN</label>
+                        <input type="text" class="form-control" name="ssn" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Phone</label>
+                        <input type="text" class="form-control" name="phone" />
+                    </div>
+                    <h5 class="text-center pt-4">Current Residence</h5>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Address</label>
+                        <input type="text" class="form-control" name="current_address" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">City</label>
+                        <input type="text" class="form-control" name="current_city" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">State</label>
+                        <input type="text" class="form-control" name="current_state" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Zipcode</label>
+                        <input type="text" class="form-control" name="current_zipcode" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Rent</label>
+                        <input type="text" class="form-control" name="current_rent">
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">How long at residence?</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="" class="h6">Years</label>
+                                <input type="number" min="0" max="40" class="form-control" name="current_years" id="" />
+                            </div>
+                            <div class="col-6">
+                                <label for="" class="h6">Months</label>
+                                <input type="number" min="0" max="11" class="form-control" name="current_month" id="" />
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-center pt-4">Previous Residence</h5>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Address</label>
+                        <input type="text" class="form-control" name="prev_address" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">City</label>
+                        <input type="text" class="form-control" name="prev_city" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">State</label>
+                        <input type="text" class="form-control" name="prev_state" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Zipcode</label>
+                        <input type="text" class="form-control" name="prev_zipcode" />
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Rent/Own</label>
+                        <select name="current_rent_own" class="form-control" id="">
+                            <option value="rent">Rent</option>
+                            <option value="own">Own</option>
+                        </select>
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">Rent</label>
+                        <input type="text" class="form-control" name="prev_rent">
+                    </div>
+                    <div class="form-group p-1">
+                        <label for="" class="h6">How long at residence?</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="" class="h6">Years</label>
+                                <input type="number" min="0" max="40" class="form-control" name="prev_years" id="" />
+                            </div>
+                            <div class="col-6">
+                                <label for="" class="h6">Months</label>
+                                <input type="number" min="0" max="11" class="form-control" name="prev_month" id="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary mt-2 mx-1" type="submit">Submit Application</button>
+
+                </form>
+            </div>
+</div>

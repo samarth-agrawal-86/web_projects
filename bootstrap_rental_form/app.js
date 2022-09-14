@@ -6,6 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const path = require("path");
+
 const expressLayouts = require("express-ejs-layouts");
 const propertiesRouter = require("./routes/properties");
 const commercialRouter = require("./routes/commercial");
