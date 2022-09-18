@@ -18,6 +18,7 @@ const prop1 = new Property({
     "/img/yellow-gold3.jpg",
   ],
 });
+
 prop1.save();
 
 const prop2 = new Property({

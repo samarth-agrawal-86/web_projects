@@ -14,8 +14,12 @@ let transport = nodemailer.createTransport({
   },
 });
 
-// Database
-mongoose.connect(process.env.MONGOOSE_LOCAL_DB);
+// Connect to local Database
+//mongoose.connect(process.env.MONGOOSE_LOCAL_DB);
+
+// Connect to MongoDB Atlas Database
+mongoose.connect(process.env.MONGOOSE_ATLAS_DB);
+
 const propertySchema = new mongoose.Schema({
   id: Number,
   name: String,
