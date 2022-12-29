@@ -4,7 +4,7 @@ let calculationDescription = 'Default';
 let logEntries = [];
 
 function getUserNumberInput() {
-  return userInput.value;
+  return parseInt(userInput.value);
 }
 
 function createLog(operation, prevResult, enteredNumber, currentResult) {
