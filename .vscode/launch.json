@@ -8,10 +8,11 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "file:///Users/samarth/Documents/web_projects/js-max/controls/index.html",
+      "url": "file:///Users/samarth/Documents/web_projects/js-max/6_functions/index.html",
       "webRoot": "${workspaceFolder}"
     }
   ]
 }
 //js-max/control-assignment-problem/index.html
-//js-max/controls/index.html
+//js-max/4_controls/index.html
+//js-max/6_functions/index.html
