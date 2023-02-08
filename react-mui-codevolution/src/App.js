@@ -18,7 +18,11 @@ import MuiMenu from './components/navigation-menu';
 // import MuiBreadcrumbs from './components/navigation-breadcrumbs';
 // import MuiDrawer from './components/navigation-drawer';
 // import MuiSpeedDial from './components/navigation-speeddial';
-import MuiBottonNavigation from './components/navigation-bottonnav';
+// import MuiBottonNavigation from './components/navigation-bottonnav';
+// import MuiAvatar from './components/datadisplay-avatar';
+import MuiBadge from './components/datadisplay-badge';
+import MuiList from './components/datadisplay-list';
+// import MuiChips from './components/datadisplay-chips';
 
 function App() {
   return (
@@ -42,7 +46,11 @@ function App() {
       {/* <MuiBreadcrumbs /> */}
       {/* <MuiDrawer /> */}
       {/* <MuiSpeedDial /> */}
-      <MuiBottonNavigation />
+      {/* <MuiBottonNavigation /> */}
+      {/* <MuiAvatar /> */}
+      <MuiBadge />
+      {/* <MuiChips /> */}
+      <MuiList />
     </div>
   );
 }
