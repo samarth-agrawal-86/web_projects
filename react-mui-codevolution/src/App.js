@@ -20,9 +20,14 @@ import MuiMenu from './components/navigation-menu';
 // import MuiSpeedDial from './components/navigation-speeddial';
 // import MuiBottonNavigation from './components/navigation-bottonnav';
 // import MuiAvatar from './components/datadisplay-avatar';
-import MuiBadge from './components/datadisplay-badge';
-import MuiList from './components/datadisplay-list';
+// import MuiBadge from './components/datadisplay-badge';
+// import MuiList from './components/datadisplay-list';
 // import MuiChips from './components/datadisplay-chips';
+// import MuiAlert from './components/feedback-alert';
+// import MuiSnackbar from './components/feedback-snackbar';
+// import MuiDialog from './components/feedback-dialog';
+// import MuiProgress from './components/feedback-progress';
+import MuiSkeleton from './components/feedback-skeleton';
 
 function App() {
   return (
@@ -48,9 +53,14 @@ function App() {
       {/* <MuiSpeedDial /> */}
       {/* <MuiBottonNavigation /> */}
       {/* <MuiAvatar /> */}
-      <MuiBadge />
+      {/* <MuiBadge /> */}
       {/* <MuiChips /> */}
-      <MuiList />
+      {/* <MuiList /> */}
+      {/* <MuiAlert /> */}
+      {/* <MuiSnackbar /> */}
+      {/* <MuiDialog /> */}
+      {/* <MuiProgress /> */}
+      <MuiSkeleton />
     </div>
   );
 }
