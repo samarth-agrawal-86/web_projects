@@ -30,7 +30,8 @@ import MuiMenu from './components/navigation-menu';
 // import MuiSkeleton from './components/feedback-skeleton';
 // import MuiLoadingButton from './components/lab-loadingbutton';
 // import MuiTabs from './components/lab-tabs';
-import MuiTimeline from './components/lab-timelines';
+// import MuiTimeline from './components/lab-timelines';
+import MuiResponsiveness from './components/responsiveness';
 
 function App() {
   return (
@@ -66,7 +67,8 @@ function App() {
       {/* <MuiSkeleton /> */}
       {/* <MuiLoadingButton /> */}
       {/* <MuiTabs /> */}
-      <MuiTimeline />
+      {/* <MuiTimeline /> */}
+      <MuiResponsiveness />
     </div>
   );
 }
