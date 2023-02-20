@@ -27,7 +27,10 @@ import MuiMenu from './components/navigation-menu';
 // import MuiSnackbar from './components/feedback-snackbar';
 // import MuiDialog from './components/feedback-dialog';
 // import MuiProgress from './components/feedback-progress';
-import MuiSkeleton from './components/feedback-skeleton';
+// import MuiSkeleton from './components/feedback-skeleton';
+// import MuiLoadingButton from './components/lab-loadingbutton';
+// import MuiTabs from './components/lab-tabs';
+import MuiTimeline from './components/lab-timelines';
 
 function App() {
   return (
@@ -60,7 +63,10 @@ function App() {
       {/* <MuiSnackbar /> */}
       {/* <MuiDialog /> */}
       {/* <MuiProgress /> */}
-      <MuiSkeleton />
+      {/* <MuiSkeleton /> */}
+      {/* <MuiLoadingButton /> */}
+      {/* <MuiTabs /> */}
+      <MuiTimeline />
     </div>
   );
 }
