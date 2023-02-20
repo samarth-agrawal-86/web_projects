@@ -1,6 +1,12 @@
 import React from 'react';
 import { Box, Stack } from '@mui/material';
-import { spacing } from '@mui/system';
+import { styled } from '@mui/system';
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  height: '250px',
+  width: '250px',
+  backgroundColor: theme.status.danger,
+}));
 
 function MuiResponsiveness() {
   return (
@@ -10,9 +16,10 @@ function MuiResponsiveness() {
         sx={{
           height: '200px',
           width: '200px',
-          bgcolor: 'primary.main',
+          bgcolor: 'neutral.darker',
         }}
       ></Box>
+      <StyledBox margin={2}></StyledBox>
       <Box
         margin={2}
         sx={{
@@ -24,7 +31,7 @@ function MuiResponsiveness() {
             lg: '800px',
             xl: '1000px',
           },
-          bgcolor: 'primary.light',
+          bgcolor: 'secondary.main',
         }}
       ></Box>
     </Stack>

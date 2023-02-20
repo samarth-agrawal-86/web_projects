@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider, createTheme, colors } from '@mui/material';
 // import MuiTypography from './components/mtypography';
 // import MuiButtons from './components/mbuttons';
 // import MuiTextField from './components/mtextfield';
@@ -33,43 +34,60 @@ import MuiMenu from './components/navigation-menu';
 // import MuiTimeline from './components/lab-timelines';
 import MuiResponsiveness from './components/responsiveness';
 
+const theme = createTheme({
+  status: {
+    danger: colors.orange[500],
+  },
+  palette: {
+    secondary: {
+      main: colors.pink[500],
+    },
+    neutral: {
+      main: colors.grey[500],
+      darker: colors.grey[700],
+    },
+  },
+});
+
 function App() {
   return (
-    <div>
-      {/* <MuiTypography /> */}
-      {/* <MuiButtons /> */}
-      {/* <MuiTextField /> */}
-      {/* <MuiSelect /> */}
-      {/* <MuiRadioButton /> */}
-      {/* <MuiCheckbox /> */}
-      {/* <MuiSwitch /> */}
-      {/* <MuiRating /> */}
-      {/* <MuiAutoComplete /> */}
-      {/* <MuiLayout /> */}
-      {/* <MuiCards /> */}
-      {/* <MuiAccordian /> */}
-      {/* <MuiImageList /> */}
-      {/* <MuiNavBar /> */}
-      <MuiMenu />
-      {/* <MuiLinks /> */}
-      {/* <MuiBreadcrumbs /> */}
-      {/* <MuiDrawer /> */}
-      {/* <MuiSpeedDial /> */}
-      {/* <MuiBottonNavigation /> */}
-      {/* <MuiAvatar /> */}
-      {/* <MuiBadge /> */}
-      {/* <MuiChips /> */}
-      {/* <MuiList /> */}
-      {/* <MuiAlert /> */}
-      {/* <MuiSnackbar /> */}
-      {/* <MuiDialog /> */}
-      {/* <MuiProgress /> */}
-      {/* <MuiSkeleton /> */}
-      {/* <MuiLoadingButton /> */}
-      {/* <MuiTabs /> */}
-      {/* <MuiTimeline /> */}
-      <MuiResponsiveness />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        {/* <MuiTypography /> */}
+        {/* <MuiButtons /> */}
+        {/* <MuiTextField /> */}
+        {/* <MuiSelect /> */}
+        {/* <MuiRadioButton /> */}
+        {/* <MuiCheckbox /> */}
+        {/* <MuiSwitch /> */}
+        {/* <MuiRating /> */}
+        {/* <MuiAutoComplete /> */}
+        {/* <MuiLayout /> */}
+        {/* <MuiCards /> */}
+        {/* <MuiAccordian /> */}
+        {/* <MuiImageList /> */}
+        {/* <MuiNavBar /> */}
+        <MuiMenu />
+        {/* <MuiLinks /> */}
+        {/* <MuiBreadcrumbs /> */}
+        {/* <MuiDrawer /> */}
+        {/* <MuiSpeedDial /> */}
+        {/* <MuiBottonNavigation /> */}
+        {/* <MuiAvatar /> */}
+        {/* <MuiBadge /> */}
+        {/* <MuiChips /> */}
+        {/* <MuiList /> */}
+        {/* <MuiAlert /> */}
+        {/* <MuiSnackbar /> */}
+        {/* <MuiDialog /> */}
+        {/* <MuiProgress /> */}
+        {/* <MuiSkeleton /> */}
+        {/* <MuiLoadingButton /> */}
+        {/* <MuiTabs /> */}
+        {/* <MuiTimeline /> */}
+        <MuiResponsiveness />
+      </div>
+    </ThemeProvider>
   );
 }
 
