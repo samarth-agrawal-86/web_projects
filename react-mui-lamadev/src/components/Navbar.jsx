@@ -48,7 +48,7 @@ function Navbar() {
               },
             }}
           >
-            LAMADEV
+            SOCIAL MEDIA
           </Typography>
           <PetsOutlined
             size="large"
