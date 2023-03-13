@@ -15,7 +15,7 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
     h2: {
-      fontWeight: 700,
+      fontWeight: 500,
       fontSize: '32px',
       lineHeight: '39px',
       color: '#000000',
@@ -25,6 +25,17 @@ const theme = createTheme({
         lineHeight: '78px',
       },
     },
+    h3: {
+      fontWeight: 500,
+      fontSize: '24px',
+      lineHeight: '29px',
+      color: '#000000',
+      [breakpoints.up('md')]: {
+        fontSize: '48px',
+        lineHeight: '59px',
+      },
+    },
+
     h4: {
       fontWeight: 700,
       fontSize: '24px',
@@ -36,6 +47,17 @@ const theme = createTheme({
       fontSize: '14px',
       lineHeight: '17px',
       color: '#686868',
+      [breakpoints.up('md')]: {
+        fontWeight: 500,
+        fontSize: '24px',
+        lineHeight: '30px',
+      },
+    },
+    body2: {
+      fontWeight: 500,
+      fontSize: '14px',
+      lineHeight: '17px',
+      color: '#000000',
       [breakpoints.up('md')]: {
         fontWeight: 500,
         fontSize: '24px',

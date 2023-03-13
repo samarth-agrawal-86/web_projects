@@ -2,9 +2,9 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SolutionsCard from './solutions-card';
 
-import strategy from '../../src/assets/img/strategy.svg';
-import design from '../../src/assets/img/design.svg';
-import development from '../../src/assets/img/development.svg';
+import strategy from '../../src/assets/img/sol-strategy.svg';
+import design from '../../src/assets/img/sol-design.svg';
+import development from '../../src/assets/img/sol-development.svg';
 
 function Solutions() {
   return (
