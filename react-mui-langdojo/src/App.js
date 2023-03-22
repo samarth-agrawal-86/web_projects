@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarWithDrawer from './components/navbarWithDrawer';
-import Main from './components/main';
+import Hero from './components/hero';
 import FeaturedCourses from './components/featured';
 import Benefits from './components/benefits';
 import Instructor from './components/instructor';
@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <NavbarWithDrawer />
-      <Main />
+      <Hero />
       <FeaturedCourses />
       <Benefits />
       <Instructor />
