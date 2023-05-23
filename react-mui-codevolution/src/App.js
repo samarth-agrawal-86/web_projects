@@ -32,7 +32,8 @@ import MuiMenu from './components/navigation-menu';
 // import MuiLoadingButton from './components/lab-loadingbutton';
 // import MuiTabs from './components/lab-tabs';
 // import MuiTimeline from './components/lab-timelines';
-import MuiResponsiveness from './components/responsiveness';
+// import MuiResponsiveness from './components/responsiveness';
+import SVGIcon from './components/SVGIcon';
 
 const theme = createTheme({
   status: {
@@ -85,7 +86,8 @@ function App() {
         {/* <MuiLoadingButton /> */}
         {/* <MuiTabs /> */}
         {/* <MuiTimeline /> */}
-        <MuiResponsiveness />
+        {/* <MuiResponsiveness /> */}
+        <SVGIcon />
       </div>
     </ThemeProvider>
   );
