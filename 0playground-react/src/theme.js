@@ -9,11 +9,12 @@ const theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#9B70FF', //RGB 155 112 255
+      main: '#9B70FF', //RGB 155 112 255 //673de6
     },
     secondary: {
       main: '#00EBC0',
     },
+    contrastText: '#ffffff',
   },
   typography: {
     fontFamily: 'Montserrat, sans-serif',
